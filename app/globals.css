@@ -1,0 +1,1445 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+
+--gold:#B89A63;
+--dark:#181818;
+--cream:#F7F6F2;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--cream);
+
+font-family:var(--font-body);
+
+overflow-x:hidden;
+
+color:#222;
+
+}
+
+h1,h2,h3,h4{
+
+font-family:var(--font-title);
+
+font-weight:500;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+.navbar{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:25px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+z-index:999;
+
+transition:.5s;
+
+}
+
+.navbar.scrolled{
+
+background:rgba(255,255,255,.92);
+
+backdrop-filter:blur(20px);
+
+box-shadow:0 8px 35px rgba(0,0,0,.08);
+
+}
+
+.logo img{
+
+height:62px;
+
+}
+
+nav{
+
+display:flex;
+
+gap:38px;
+
+font-size:14px;
+
+text-transform:uppercase;
+
+letter-spacing:2px;
+
+}
+
+nav a{
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:var(--gold);
+
+}
+
+.button{
+
+background:var(--gold);
+
+padding:15px 34px;
+
+border-radius:40px;
+
+color:white;
+
+letter-spacing:2px;
+
+transition:.3s;
+
+}
+
+.button:hover{
+
+background:#000;
+
+}
+
+.hero{
+
+height:100vh;
+
+position:relative;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+.hero video{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.overlay{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(rgba(0,0,0,.30),rgba(0,0,0,.60));
+
+}
+
+.heroContent{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+color:white;
+
+}
+
+.heroContent h3{
+
+font-size:18px;
+
+letter-spacing:6px;
+
+margin-bottom:30px;
+
+font-family:Montserrat;
+
+}
+
+.heroContent h1{
+
+font-size:120px;
+
+line-height:105px;
+
+letter-spacing:8px;
+
+margin-bottom:35px;
+
+}
+
+.heroContent p{
+
+font-size:24px;
+
+line-height:2;
+
+margin-bottom:45px;
+
+}
+
+/* ========================= */
+/* ABOUT */
+/* ========================= */
+
+.about{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:90px;
+
+padding:140px 8%;
+
+align-items:center;
+
+}
+
+.about-image img{
+
+width:100%;
+
+height:auto;
+
+border-radius:18px;
+
+}
+
+.section-subtitle{
+
+color:#B89A63;
+
+letter-spacing:4px;
+
+font-size:13px;
+
+font-weight:600;
+
+display:block;
+
+margin-bottom:20px;
+
+}
+
+.about h2{
+
+font-size:62px;
+
+line-height:1.1;
+
+margin-bottom:30px;
+
+}
+
+.about p{
+
+line-height:2;
+
+margin-bottom:25px;
+
+color:#666;
+
+}
+
+/* ========================= */
+/* SERVICES */
+/* ========================= */
+
+.services{
+
+padding:140px 8%;
+
+text-align:center;
+
+background:white;
+
+}
+
+.services h2{
+
+font-size:60px;
+
+margin:25px auto 70px;
+
+max-width:700px;
+
+}
+
+.services-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+}
+
+.service-card{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:18px;
+
+cursor:pointer;
+
+}
+
+.service-card img{
+
+width:100%;
+
+height:500px;
+
+object-fit:cover;
+
+transition:1s;
+
+}
+
+.service-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+.service-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+
+transparent,
+
+rgba(0,0,0,.65)
+
+);
+
+}
+
+.service-card h3{
+
+position:absolute;
+
+bottom:35px;
+
+left:35px;
+
+color:white;
+
+font-size:34px;
+
+z-index:5;
+
+}
+
+/* ========================= */
+/* LUXURY */
+/* ========================= */
+
+.luxury{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:90px;
+
+padding:160px 8%;
+
+align-items:center;
+
+}
+
+.luxury img{
+
+width:100%;
+
+height:auto;
+
+border-radius:20px;
+
+}
+
+.luxury h2{
+
+font-size:62px;
+
+margin:20px 0;
+
+}
+
+.luxury p{
+
+line-height:2;
+
+margin-bottom:30px;
+
+color:#666;
+
+}
+
+.luxury ul{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:16px;
+
+list-style:none;
+
+padding:0;
+
+}
+
+.luxury li{
+
+padding:12px 0;
+
+border-bottom:1px solid #e5e5e5;
+
+}
+
+/* ========================= */
+/* PORTFOLIO */
+/* ========================= */
+
+.portfolio{
+
+padding:160px 8%;
+
+background:white;
+
+}
+
+.portfolio h2{
+
+font-size:70px;
+
+margin:20px 0 70px;
+
+}
+
+.portfolio-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:35px;
+
+grid-auto-rows:350px;
+
+}
+
+.portfolio-card{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:22px;
+
+}
+
+.portfolio-card.large{
+
+grid-row:span 2;
+
+}
+
+.portfolio-image{
+
+object-fit:cover;
+
+transition:1s;
+
+}
+
+.portfolio-card:hover .portfolio-image{
+
+transform:scale(1.08);
+
+}
+
+.portfolio-overlay{
+
+position:absolute;
+
+bottom:0;
+
+left:0;
+
+width:100%;
+
+padding:40px;
+
+background:linear-gradient(transparent,rgba(0,0,0,.75));
+
+color:white;
+
+}
+
+.portfolio-overlay p{
+
+letter-spacing:3px;
+
+font-size:12px;
+
+text-transform:uppercase;
+
+margin-bottom:10px;
+
+}
+
+.portfolio-overlay h3{
+
+font-size:34px;
+
+}
+
+/* ========================= */
+/* WHY GIORDANO */
+/* ========================= */
+
+.why{
+
+padding:150px 8%;
+
+background:#F8F7F2;
+
+text-align:center;
+
+}
+
+.why-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:30px;
+
+margin-top:60px;
+
+}
+
+.why-card{
+
+background:white;
+
+padding:60px 40px;
+
+border-radius:18px;
+
+transition:.4s;
+
+}
+
+.why-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 25px 60px rgba(0,0,0,.08);
+
+}
+
+.why-icon{
+
+font-size:42px;
+
+color:#B89A63;
+
+margin-bottom:25px;
+
+}
+
+/* ========================= */
+/* PROCESS */
+/* ========================= */
+
+.process{
+
+padding:160px 8%;
+
+background:white;
+
+text-align:center;
+
+}
+
+.process h2{
+
+font-size:64px;
+
+margin:20px 0 80px;
+
+}
+
+.timeline{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:40px;
+
+}
+
+.step{
+
+padding:50px;
+
+background:#fafafa;
+
+border-radius:20px;
+
+transition:.4s;
+
+}
+
+.step:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 60px rgba(0,0,0,.08);
+
+}
+
+.circle{
+
+width:80px;
+
+height:80px;
+
+margin:auto;
+
+border-radius:50%;
+
+background:#B89A63;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+color:white;
+
+font-size:32px;
+
+margin-bottom:30px;
+
+}
+
+/* ========================= */
+/* CTA */
+/* ========================= */
+
+.cta{
+
+position:relative;
+
+padding:180px 8%;
+
+background:url("/images/dubai.jpg") center/cover;
+
+text-align:center;
+
+}
+
+.ctaOverlay{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.55);
+
+}
+
+.ctaContent{
+
+position:relative;
+
+z-index:2;
+
+color:white;
+
+max-width:900px;
+
+margin:auto;
+
+}
+
+.cta h2{
+
+font-size:90px;
+
+line-height:1;
+
+margin:30px 0;
+
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+.footer{
+
+background:#161616;
+
+color:white;
+
+padding:90px 8%;
+
+display:grid;
+
+grid-template-columns:2fr 1fr 1fr 1fr;
+
+gap:50px;
+
+}
+
+.footer img{
+
+width:220px;
+
+margin-bottom:25px;
+
+}
+
+.footer h4{
+
+margin-bottom:20px;
+
+color:#B89A63;
+
+}
+
+.footer a{
+
+display:block;
+
+margin-bottom:12px;
+
+transition:.3s;
+
+}
+
+.footer a:hover{
+
+color:#B89A63;
+
+}
+
+/* ========================= */
+/* PAGES (ABOUT, ETC) */
+/* ========================= */
+
+.pageHero{
+
+height:70vh;
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.pageOverlay{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.45);
+
+}
+
+.pageHeroContent{
+
+position:relative;
+
+z-index:2;
+
+color:white;
+
+text-align:center;
+
+}
+
+.pageHeroContent span{
+
+letter-spacing:5px;
+
+}
+
+.pageHeroContent h1{
+
+font-size:90px;
+
+margin-top:20px;
+
+line-height:1;
+
+}
+
+.aboutCompany{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:90px;
+
+padding:140px 8%;
+
+align-items:center;
+
+}
+
+.aboutCompany img{
+
+width:100%;
+
+border-radius:20px;
+
+height:auto;
+
+}
+
+.values{
+
+padding:140px 8%;
+
+background:#F8F7F2;
+
+text-align:center;
+
+}
+
+.valuesGrid{
+
+margin-top:70px;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:35px;
+
+}
+
+.valuesGrid div{
+
+background:white;
+
+padding:45px;
+
+border-radius:18px;
+
+transition:.4s;
+
+}
+
+.valuesGrid div:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 60px rgba(0,0,0,.08);
+
+}
+
+.valuesGrid h3{
+
+margin-bottom:20px;
+
+font-size:26px;
+
+}
+
+.valuesGrid p{
+
+line-height:1.8;
+
+color:#666;
+
+}
+
+/* ========================= */
+/* PRIMA HUB PAGE */
+/* ========================= */
+
+.primaHero{
+height:75vh;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.primaLogo{
+width:220px;
+margin-bottom:40px;
+}
+
+.primaIntro{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:100px;
+padding:150px 8%;
+align-items:center;
+}
+
+.primaIntro img{
+width:100%;
+border-radius:20px;
+}
+
+.categories{
+padding:140px 8%;
+background:#fafafa;
+text-align:center;
+}
+
+.categoryGrid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:35px;
+margin-top:70px;
+}
+
+.categoryCard{
+background:white;
+border-radius:20px;
+overflow:hidden;
+transition:.4s;
+}
+
+.categoryCard:hover{
+transform:translateY(-10px);
+box-shadow:0 25px 60px rgba(0,0,0,.08);
+}
+
+.categoryCard img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.categoryCard h3{
+padding:30px;
+font-size:28px;
+}
+
+.primaCTA{
+padding:150px 8%;
+background:#181818;
+text-align:center;
+color:white;
+}
+
+.primaCTA h2{
+font-size:70px;
+margin-bottom:20px;
+}
+
+.primaCTA p{
+font-size:22px;
+margin-bottom:40px;
+color:#ddd;
+}
+
+/* ========================= */
+/* PORTFOLIO PAGE */
+/* ========================= */
+
+.portfolioHero{
+
+height:65vh;
+
+background:url("/images/dubai.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.portfolioHeroOverlay{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.45);
+
+}
+
+.portfolioHeroText{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+color:white;
+
+}
+
+.portfolioHeroText h1{
+
+font-size:90px;
+
+margin:20px 0;
+
+}
+
+.portfolioGrid{
+
+padding:150px 8%;
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:50px;
+
+}
+
+.portfolioItem{
+
+display:block;
+
+}
+
+.imageWrapper{
+
+position:relative;
+
+height:650px;
+
+overflow:hidden;
+
+border-radius:24px;
+
+}
+
+.imageWrapper img{
+
+transition:1s;
+
+}
+
+.portfolioItem:hover img{
+
+transform:scale(1.08);
+
+}
+
+.portfolioInfo{
+
+padding-top:25px;
+
+}
+
+.portfolioInfo p{
+
+letter-spacing:3px;
+
+color:#B89A63;
+
+font-size:12px;
+
+text-transform:uppercase;
+
+}
+
+.portfolioInfo h3{
+
+font-size:38px;
+
+margin-top:10px;
+
+}
+
+/* ========================= */
+/* MOBILE MENU */
+/* ========================= */
+
+.mobileButton{
+
+display:none;
+
+background:none;
+
+border:none;
+
+font-size:28px;
+
+cursor:pointer;
+
+color:#222;
+
+z-index:9999;
+
+}
+
+.mobileMenu{
+
+position:fixed;
+
+top:0;
+
+right:-100%;
+
+width:320px;
+
+height:100vh;
+
+background:white;
+
+padding:120px 40px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:28px;
+
+transition:.45s;
+
+box-shadow:-10px 0 40px rgba(0,0,0,.08);
+
+z-index:9998;
+
+}
+
+.mobileMenu.active{
+
+right:0;
+
+}
+
+.mobileMenu a{
+
+font-size:18px;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+transition:.3s;
+
+}
+
+.mobileMenu a:hover{
+
+color:#B89A63;
+
+}
+
+.mobileWhatsapp{
+
+margin-top:40px;
+
+background:#B89A63;
+
+padding:18px;
+
+border-radius:40px;
+
+color:white;
+
+text-align:center;
+
+}
+
+@media(max-width:1024px){
+
+nav{
+
+display:none;
+
+}
+
+.mobileButton{
+
+display:block;
+
+}
+
+}
+
+/* ========================= */
+/* WHATSAPP BUTTON */
+/* ========================= */
+
+.whatsapp{
+
+position:fixed;
+
+right:35px;
+
+bottom:35px;
+
+width:68px;
+
+height:68px;
+
+border-radius:50%;
+
+background:#25D366;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:36px;
+
+color:white;
+
+z-index:9999;
+
+box-shadow:0 10px 35px rgba(0,0,0,.25);
+
+transition:.3s;
+
+}
+
+.whatsapp:hover{
+
+transform:scale(1.1);
+
+}
+
+/* ========================= */
+/* CONTACT PAGE */
+/* ========================= */
+
+.contactHero{
+
+height:60vh;
+
+background:url("/images/contact.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+position:relative;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+.contactSection{
+
+display:grid;
+
+grid-template-columns:420px 1fr;
+
+gap:80px;
+
+padding:140px 8%;
+
+}
+
+.contactInfo h2{
+
+font-size:48px;
+
+margin-bottom:40px;
+
+}
+
+.contactCard{
+
+padding:25px 0;
+
+border-bottom:1px solid #ddd;
+
+}
+
+.contactCard h4{
+
+color:#B89A63;
+
+margin-bottom:10px;
+
+letter-spacing:2px;
+
+}
+
+.contactCard a{
+
+font-size:22px;
+
+}
+
+.contactForm{
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+.contactForm input{
+
+padding:20px;
+
+font-size:18px;
+
+border:1px solid #ddd;
+
+border-radius:10px;
+
+}
+
+.contactForm textarea{
+
+padding:20px;
+
+font-size:18px;
+
+border:1px solid #ddd;
+
+border-radius:10px;
+
+resize:none;
+
+}
+
+.mapSection iframe{
+
+width:100%;
+
+height:550px;
+
+border:0;
+
+}
+
+/* ========================= */
+/* TESTIMONIALS */
+/* ========================= */
+
+.testimonials{
+
+padding:150px 8%;
+
+background:#F7F6F2;
+
+text-align:center;
+
+}
+
+.testimonialGrid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:35px;
+
+margin-top:70px;
+
+}
+
+.testimonialCard{
+
+background:white;
+
+padding:45px;
+
+border-radius:20px;
+
+font-size:18px;
+
+line-height:1.8;
+
+box-shadow:0 15px 40px rgba(0,0,0,.06);
+
+}
+
+.testimonialCard h4{
+
+margin-top:25px;
+
+color:#B89A63;
+
+}
