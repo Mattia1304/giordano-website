@@ -20,7 +20,7 @@ export default function Navbar() {
 
   return (
     <header className={scrolled ? "navbar scrolled" : "navbar"}>
-      <div className="logo relative w-48 h-16">
+      <div className="logo relative w-40 h-12 md:w-48 md:h-16">
         <Image 
           src="/logos/giordano.png" 
           alt="Giordano Building Contracting" 

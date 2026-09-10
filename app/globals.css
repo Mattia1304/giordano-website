@@ -1220,20 +1220,90 @@ text-align:center;
 
 }
 
-@media(max-width:1024px){
+/* ========================================================================= */
+/* ========================= RESPONSIVE DESIGN ============================= */
+/* ========================================================================= */
 
-nav{
+@media (max-width: 1024px) {
+  /* Hide desktop nav, show mobile button */
+  nav { display: none; }
+  .mobileButton { display: block; }
 
-display:none;
+  /* Adjust generic padding for tablet */
+  .services, .process, .cta, .footer, .values, .categories, .primaCTA, .testimonials, .portfolioGrid, .aboutCompany, .primaIntro, .contactSection, .luxury, .portfolio, .about, .why {
+    padding: 80px 5%;
+  }
 
+  /* Split grids into 2 columns where they were 3 or 4 */
+  .services-grid, .timeline, .valuesGrid, .categoryGrid, .testimonialGrid, .footer, .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* 2-column layouts converted to 1-col on tablet or adjusted */
+  .aboutCompany, .primaIntro, .luxury, .contactSection {
+    grid-template-columns: 1fr; 
+    gap: 50px;
+  }
+  
+  .portfolioGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* Typography tweaks for tablet */
+  .hero h1 { font-size: 65px; }
+  .sectionTitle h2, .cta h2, .pageHeroContent h1, .portfolioHeroText h1, .primaCTA h2, .luxury h2 { font-size: 55px; }
+  .imageWrapper { height: 500px; }
 }
 
-.mobileButton{
+@media (max-width: 768px) {
+  /* Convert all remaining grids to 1 column */
+  .services-grid, .timeline, .valuesGrid, .categoryGrid, .testimonialGrid, .footer, .portfolioGrid, .why-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  
+  .luxury ul {
+    grid-template-columns: 1fr;
+  }
 
-display:block;
+  /* Adjust padding for mobile */
+  .services, .process, .cta, .footer, .values, .categories, .primaCTA, .testimonials, .portfolioGrid, .aboutCompany, .primaIntro, .contactSection, .luxury, .portfolio, .about, .why {
+    padding: 60px 5%;
+  }
 
+  /* Typography tweaks for mobile */
+  .hero h1 { font-size: 50px; }
+  .hero p { font-size: 16px; }
+  
+  .sectionTitle h2, .cta h2, .pageHeroContent h1, .portfolioHeroText h1, .primaCTA h2, .luxury h2 { font-size: 40px; line-height: 1.2; }
+  .sectionTitle p, .primaCTA p { font-size: 16px; }
+  
+  .button { padding: 18px 30px; font-size: 13px; }
+
+  /* Specific component tweaks */
+  .imageWrapper { height: 350px; }
+  .primaLogo { width: 150px; }
+  .footer img { width: 180px; }
+  
+  .pageHero, .portfolioHero, .contactHero, .primaHero { height: 50vh; }
+  .mapSection iframe { height: 400px; }
+
+  /* Adjust images */
+  .aboutCompany img, .primaIntro img, .luxury img { max-width: 100%; height: auto; }
 }
 
+@media (max-width: 480px) {
+  /* Extra tweaks for very small phones */
+  .hero h1 { font-size: 38px; }
+  .sectionTitle h2, .cta h2, .pageHeroContent h1, .portfolioHeroText h1, .primaCTA h2, .luxury h2 { font-size: 32px; }
+  
+  .heroContent { width: 90%; }
+  .imageWrapper { height: 280px; }
+  .categoryCard img { height: 250px; }
+  
+  .contactInfo h2 { font-size: 32px; }
+  .contactCard a { font-size: 18px; }
 }
 
 /* ========================= */
