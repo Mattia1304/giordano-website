@@ -8,6 +8,8 @@ export function generateStaticParams() {
   }));
 }
 
+export const runtime = 'edge';
+
 export default async function ProjectPage({
   params,
 }: {
