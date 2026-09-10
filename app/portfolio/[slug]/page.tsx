@@ -2,6 +2,12 @@ import { projects } from "@/data/projects";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+export function generateStaticParams() {
+  return projects.map((p) => ({
+    slug: p.slug,
+  }));
+}
+
 export default async function ProjectPage({
   params,
 }: {
