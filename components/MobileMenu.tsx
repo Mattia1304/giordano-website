@@ -13,11 +13,8 @@ return(
 <>
 
 <button
-
-className="mobileButton"
-
-onClick={()=>setOpen(!open)}
-
+  className={`mobileButton ${open ? 'active' : ''}`}
+  onClick={() => setOpen(!open)}
 >
 
 {
