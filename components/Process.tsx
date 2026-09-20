@@ -44,21 +44,19 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="process">
+    <section className="process overflow-hidden">
 
-      <span className="section-subtitle">
+      <span className="section-subtitle reveal">
         OUR PROCESS
       </span>
 
-      <h2>
-        From Vision to Reality
-      </h2>
+      <h2 className="reveal delay-1">From Vision to Reality</h2>
 
       <div className="timeline">
 
         {steps.map((step, index) => (
 
-          <div className="step" key={index}>
+          <div className={`step reveal delay-${(index % 3) + 1}`} key={index}>
 
             <div className="circle">
               {step.icon}
@@ -77,3 +75,4 @@ export default function Process() {
     </section>
   );
 }
+

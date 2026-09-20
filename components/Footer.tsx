@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="footer">
 
-      <div className="footerLogo relative w-40 h-16">
+      <div className="footerLogo relative w-40 h-16 reveal">
 
         <Image
           src="/logos/giordano.png"
@@ -16,7 +16,7 @@ export default function Footer() {
 
       </div>
 
-      <div>
+      <div className="reveal">
 
         <h4>Contact</h4>
 
@@ -28,7 +28,7 @@ export default function Footer() {
 
       </div>
 
-      <div>
+      <div className="reveal">
 
         <h4>Quick Links</h4>
 
@@ -42,7 +42,7 @@ export default function Footer() {
 
       </div>
 
-      <div>
+      <div className="reveal">
 
         <h4>Partner</h4>
 
@@ -57,3 +57,4 @@ export default function Footer() {
     </footer>
   );
 }
+

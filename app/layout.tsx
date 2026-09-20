@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 import Whatsapp from "@/components/Whatsapp";
+import ScrollEngine from "@/components/ScrollEngine";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -42,6 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${montserrat.className}`}>
+        <ScrollEngine />
         {children}
         <Whatsapp />
       </body>

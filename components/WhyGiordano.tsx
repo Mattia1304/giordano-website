@@ -28,17 +28,17 @@ export default function WhyGiordano() {
   return (
     <section className="why">
 
-      <span className="section-subtitle">
+      <span className="section-subtitle reveal">
         WHY CHOOSE US
       </span>
 
-      <h2>Italian Quality. Dubai Standards.</h2>
+      <h2 className="reveal delay-1">Italian Quality. Dubai Standards.</h2>
 
       <div className="why-grid">
 
-        {items.map((item) => (
+        {items.map((item, index) => (
 
-          <div className="why-card" key={item.title}>
+          <div className={`why-card reveal delay-${(index % 4) + 1}`} key={item.title}>
 
             <div className="why-icon">
               {item.icon}
@@ -55,3 +55,4 @@ export default function WhyGiordano() {
     </section>
   );
 }
+

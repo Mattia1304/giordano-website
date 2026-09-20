@@ -34,70 +34,36 @@ image:"/images/services/office.jpg"
 
 ]
 
-export default function Services(){
+export default function Services() {
+  return (
+    <section className="services">
+      <span className="section-subtitle reveal">
+        OUR EXPERTISE
+      </span>
+      <h2 className="reveal delay-1">
+        Luxury Spaces
+        <br />
+        Built With Italian Excellence
+      </h2>
 
-return(
-
-<section className="services">
-
-<span className="section-subtitle">
-
-OUR EXPERTISE
-
-</span>
-
-<h2>
-
-Luxury Spaces
-
-Built With Italian Excellence
-
-</h2>
-
-<div className="services-grid">
-
-{
-
-services.map((service,index)=>(
-
-<div
-
-className="service-card"
-
-key={index}
-
->
-
-<Image
-
-src={service.image}
-
-alt={service.title}
-
-width={700}
-
-height={900}
-
-/>
-
-<div className="service-overlay"/>
-
-<h3>
-
-{service.title}
-
-</h3>
-
-</div>
-
-))
-
-}
-
-</div>
-
-</section>
-
-)
-
+      <div className="services-grid">
+        {services.map((service, index) => (
+          <div
+            className={`service-card reveal delay-${(index % 4) + 1}`}
+            key={index}
+          >
+            <Image
+              src={service.image}
+              alt={service.title}
+              width={700}
+              height={900}
+              className="parallax-bg"
+            />
+            <div className="service-overlay" />
+            <h3>{service.title}</h3>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
