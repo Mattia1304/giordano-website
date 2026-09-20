@@ -55,13 +55,13 @@ return(
 
 {
 
-projects.map(project=>(
+projects.map((project, index) =>(
 
 <Link
 
 href={`/portfolio/${project.slug}`}
 
-className="portfolioItem"
+className={`portfolioItem reveal delay-${(index % 3) + 1}`}
 
 key={project.slug}
 
@@ -102,3 +102,4 @@ className="object-cover"
 )
 
 }
+

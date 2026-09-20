@@ -21,17 +21,17 @@ export default function PrimaHub() {
 
         <div className="pageOverlay"/>
 
-        <div className="heroContent">
+        <div className="heroContent reveal active">
 
           <Image
             src="/logos/primahub.png"
             alt="PRIMA HUB"
             width={300}
             height={100}
-            className="primaLogo"
+            className="primaLogo reveal delay-1 active"
           />
 
-          <h1>
+          <h1 className="reveal delay-2 active">
 
             Exclusive Italian
 
@@ -41,9 +41,7 @@ export default function PrimaHub() {
 
           </h1>
 
-          <p>
-
-            JLT Cluster T • Dubai
+          <p className="reveal delay-3 active">JLT Cluster T • Dubai
 
           </p>
 
@@ -57,32 +55,24 @@ export default function PrimaHub() {
 
         <div>
 
-          <span className="section-subtitle">
-
-            MADE IN ITALY
+          <span className="section-subtitle reveal">MADE IN ITALY
 
           </span>
 
-          <h2>
-
-            The Finest Italian
+          <h2 className="reveal delay-1">The Finest Italian
 
             Interior Materials
 
           </h2>
 
-          <p>
-
-            Through our partnership with PRIMA HUB,
+          <p className="reveal delay-2">Through our partnership with PRIMA HUB,
             Giordano Building Contracting offers direct
             access to premium Italian finishes for
             luxury residential and commercial projects.
 
           </p>
 
-          <p>
-
-            Every product is selected for quality,
+          <p className="reveal delay-3">Every product is selected for quality,
             design and long-term durability,
             ensuring exceptional results.
 
@@ -92,9 +82,7 @@ export default function PrimaHub() {
 
         <div>
 
-          <Image
-
-            src="/images/prima/showroom.jpg"
+          <Image className="reveal delay-4 parallax-bg" src="/images/prima/showroom.jpg"
 
             width={900}
 
@@ -112,21 +100,17 @@ export default function PrimaHub() {
 
       <section className="categories">
 
-        <span className="section-subtitle">
-
-          MATERIALS
+        <span className="section-subtitle reveal">MATERIALS
 
         </span>
 
-        <h2>
-
-          Italian Collections
+        <h2 className="reveal delay-1">Italian Collections
 
         </h2>
 
         <div className="categoryGrid">
 
-          <div className="categoryCard">
+          <div className="categoryCard reveal delay-1">
 
             <Image src="/images/materials/marble.jpg" alt="Marble" width={600} height={600} />
 
@@ -134,7 +118,7 @@ export default function PrimaHub() {
 
           </div>
 
-          <div className="categoryCard">
+          <div className="categoryCard reveal delay-1">
 
             <Image src="/images/materials/bathroom.jpg" alt="Bathrooms" width={600} height={600} />
 
@@ -142,7 +126,7 @@ export default function PrimaHub() {
 
           </div>
 
-          <div className="categoryCard">
+          <div className="categoryCard reveal delay-1">
 
             <Image src="/images/materials/kitchen.jpg" alt="Kitchens" width={600} height={600} />
 
@@ -150,7 +134,7 @@ export default function PrimaHub() {
 
           </div>
 
-          <div className="categoryCard">
+          <div className="categoryCard reveal delay-1">
 
             <Image src="/images/materials/parquet.jpg" alt="Wood Flooring" width={600} height={600} />
 
@@ -158,7 +142,7 @@ export default function PrimaHub() {
 
           </div>
 
-          <div className="categoryCard">
+          <div className="categoryCard reveal delay-1">
 
             <Image src="/images/materials/lighting.jpg" alt="Lighting" width={600} height={600} />
 
@@ -166,7 +150,7 @@ export default function PrimaHub() {
 
           </div>
 
-          <div className="categoryCard">
+          <div className="categoryCard reveal delay-1">
 
             <Image src="/images/materials/doors.jpg" alt="Doors" width={600} height={600} />
 
@@ -182,21 +166,15 @@ export default function PrimaHub() {
 
       <section className="primaCTA">
 
-        <h2>
-
-          Visit PRIMA HUB
+        <h2 className="reveal">Visit PRIMA HUB
 
         </h2>
 
-        <p>
-
-          Discover the finest Italian materials in Dubai.
+        <p className="reveal delay-1">Discover the finest Italian materials in Dubai.
 
         </p>
 
-        <a
-          href="/contact"
-          className="button"
+        <a href="/contact" className="button reveal delay-2"
         >
 
           Book Your Visit
@@ -210,3 +188,4 @@ export default function PrimaHub() {
     </>
   );
 }
+

@@ -11,11 +11,11 @@ export default function PortfolioPage() {
 
         <div className="portfolioHeroOverlay"/>
 
-        <div className="portfolioHeroText">
+        <div className="portfolioHeroText reveal active">
 
-          <span>OUR PROJECTS</span>
+          <span className="reveal delay-1 active">OUR PROJECTS</span>
 
-          <h1>
+          <h1 className="reveal delay-2 active">
 
             Luxury Renovation
 
@@ -23,9 +23,7 @@ export default function PortfolioPage() {
 
           </h1>
 
-          <p>
-
-            Selected residential and commercial projects across Dubai.
+          <p className="reveal delay-3 active">Selected residential and commercial projects across Dubai.
 
           </p>
 
@@ -39,3 +37,4 @@ export default function PortfolioPage() {
     </>
   );
 }
+

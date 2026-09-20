@@ -15,45 +15,41 @@ export default function ScrollEngine() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("active");
-            // Unobserve to run animation only once
             observer.unobserve(entry.target);
           }
         });
       },
-      {
-        threshold: 0.1, // Trigger when 10% of the element is visible
-        rootMargin: "0px 0px -50px 0px" // Trigger slightly before the bottom
-      }
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
-    // Initial check and observer assignment
-    setTimeout(() => {
-      const currentRevealElements = document.querySelectorAll(".reveal");
-      currentRevealElements.forEach((el) => observer.observe(el));
-    }, 100);
+    // Initial check
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    // Watch for DOM changes to observe new elements (crucial for Next.js navigation)
+    const mutationObserver = new MutationObserver(() => {
+      document.querySelectorAll(".reveal:not(.active)").forEach((el) => {
+        observer.observe(el);
+      });
+    });
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
 
     // 2. Scroll Listener for Parallax Effects
     let ticking = false;
-
     const onScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          document.documentElement.style.setProperty(
-            "--scroll",
-            window.scrollY.toString()
-          );
+          document.documentElement.style.setProperty("--scroll", window.scrollY.toString());
           ticking = false;
         });
         ticking = true;
       }
     };
-
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
 
-    // Cleanup
     return () => {
       observer.disconnect();
+      mutationObserver.disconnect();
       window.removeEventListener("scroll", onScroll);
     };
   }, [pathname]); // Re-run effect when route changes to catch new elements

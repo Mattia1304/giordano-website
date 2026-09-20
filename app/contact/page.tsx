@@ -11,14 +11,13 @@ export default function ContactPage() {
 
         <div className="overlay"/>
 
-        <div className="heroContent">
+        <div className="heroContent reveal active">
 
-          <span>CONTACT</span>
+          <span className="reveal delay-1 active">CONTACT</span>
 
-          <h1>Let's Discuss Your Project</h1>
+          <h1 className="reveal delay-2 active">Let's Discuss Your Project</h1>
 
-          <p>
-            Luxury Renovation • Interior Design • Made in Italy
+          <p className="reveal delay-3 active">Luxury Renovation • Interior Design • Made in Italy
           </p>
 
         </div>
@@ -29,9 +28,9 @@ export default function ContactPage() {
 
         <div className="contactInfo">
 
-          <h2>Giordano Building Contracting</h2>
+          <h2 className="reveal delay-1">Giordano Building Contracting</h2>
 
-          <div className="contactCard">
+          <div className="contactCard reveal delay-2">
 
             <h4>Email</h4>
 
@@ -41,7 +40,7 @@ export default function ContactPage() {
 
           </div>
 
-          <div className="contactCard">
+          <div className="contactCard reveal delay-2">
 
             <h4>Phone</h4>
 
@@ -51,7 +50,7 @@ export default function ContactPage() {
 
           </div>
 
-          <div className="contactCard">
+          <div className="contactCard reveal delay-2">
 
             <h4>Showroom Partner</h4>
 
@@ -84,3 +83,4 @@ export default function ContactPage() {
     </>
   );
 }
+

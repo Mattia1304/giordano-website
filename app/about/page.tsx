@@ -18,11 +18,10 @@ export default function AboutPage() {
 
         <div className="pageOverlay" />
 
-        <div className="pageHeroContent">
-          <span>ABOUT US</span>
+        <div className="pageHeroContent reveal active">
+          <span className="reveal active">ABOUT US</span>
 
-          <h1>
-            Italian Excellence
+          <h1 className="reveal delay-1 active">Italian Excellence
             <br />
             Built in Dubai
           </h1>
@@ -33,31 +32,20 @@ export default function AboutPage() {
 
         <div>
 
-          <span className="section-subtitle">
-
-            WHO WE ARE
+          <span className="section-subtitle reveal">WHO WE ARE
 
           </span>
 
-          <h2>
+          <h2 className="reveal delay-1">Luxury Renovation Specialists</h2>
 
-            Luxury Renovation
-            Specialists
-
-          </h2>
-
-          <p>
-
-            Giordano Building Contracting is an Italian building
+          <p className="reveal delay-2">Giordano Building Contracting is an Italian building
             company based in Dubai, specializing in luxury
             renovations, premium fit-out and bespoke interior
             solutions.
 
           </p>
 
-          <p>
-
-            We combine Italian craftsmanship with modern
+          <p className="reveal delay-3">We combine Italian craftsmanship with modern
             construction techniques to deliver exceptional
             projects throughout the UAE.
 
@@ -67,8 +55,7 @@ export default function AboutPage() {
 
         <div>
 
-          <Image
-            src="/images/about/company.jpg"
+          <Image className="reveal delay-4 parallax-bg" src="/images/about/company.jpg"
             width={800}
             height={1000}
             alt="Company"
@@ -80,23 +67,17 @@ export default function AboutPage() {
 
       <section className="values">
 
-        <span className="section-subtitle">
-
-          OUR VALUES
+        <span className="section-subtitle reveal">OUR VALUES
 
         </span>
 
-        <h2>
-
-          What Defines Our Work
-
-        </h2>
+        <h2 className="reveal delay-1">What Defines Our Work</h2>
 
         <div className="valuesGrid">
 
           <div>
 
-            <h3>Italian Craftsmanship</h3>
+            <h3 className="reveal delay-1">Italian Craftsmanship</h3>
 
             <p>
 
@@ -109,7 +90,7 @@ export default function AboutPage() {
 
           <div>
 
-            <h3>Premium Materials</h3>
+            <h3 className="reveal delay-2">Premium Materials</h3>
 
             <p>
 
@@ -122,7 +103,7 @@ export default function AboutPage() {
 
           <div>
 
-            <h3>Project Management</h3>
+            <h3 className="reveal delay-3">Project Management</h3>
 
             <p>
 
@@ -135,7 +116,7 @@ export default function AboutPage() {
 
           <div>
 
-            <h3>Turnkey Delivery</h3>
+            <h3 className="reveal delay-4">Turnkey Delivery</h3>
 
             <p>
 
@@ -154,3 +135,4 @@ export default function AboutPage() {
     </>
   );
 }
+
