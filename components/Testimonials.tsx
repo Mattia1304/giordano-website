@@ -23,12 +23,6 @@ return(
 
 <section className="testimonials">
 
-<span className="section-subtitle">
-
-TESTIMONIALS
-
-</span>
-
 <h2>
 
 What Our Clients Say

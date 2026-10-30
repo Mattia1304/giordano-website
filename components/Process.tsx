@@ -46,10 +46,6 @@ export default function Process() {
   return (
     <section className="process">
 
-      <span className="section-subtitle">
-        OUR PROCESS
-      </span>
-
       <h2>
         From Vision to Reality
       </h2>

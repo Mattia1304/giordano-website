@@ -1,6 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "PRIMA HUB Showroom | Giordano Building Contracting",
+  description:
+    "Italian interior materials in Dubai: marble, bathrooms, kitchens, wood flooring, lighting and doors at the PRIMA HUB showroom.",
+  alternates: { canonical: "/prima-hub" },
+};
 
 export default function PrimaHub() {
   return (
@@ -43,7 +51,7 @@ export default function PrimaHub() {
 
           <p>
 
-            JLT Cluster T • Dubai
+            JLT Cluster T, Dubai
 
           </p>
 
@@ -56,12 +64,6 @@ export default function PrimaHub() {
       <section className="primaIntro">
 
         <div>
-
-          <span className="section-subtitle">
-
-            MADE IN ITALY
-
-          </span>
 
           <h2>
 
@@ -111,12 +113,6 @@ export default function PrimaHub() {
       {/* CATEGORIES */}
 
       <section className="categories">
-
-        <span className="section-subtitle">
-
-          MATERIALS
-
-        </span>
 
         <h2>
 

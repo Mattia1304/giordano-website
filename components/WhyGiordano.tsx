@@ -28,10 +28,6 @@ export default function WhyGiordano() {
   return (
     <section className="why">
 
-      <span className="section-subtitle">
-        WHY CHOOSE US
-      </span>
-
       <h2>Italian Quality. Dubai Standards.</h2>
 
       <div className="why-grid">

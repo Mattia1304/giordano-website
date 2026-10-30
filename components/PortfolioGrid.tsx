@@ -1,104 +1,45 @@
 import Image from "next/image";
 import Link from "next/link";
+import { projects } from "@/data/projects";
 
-const projects = [
+export default function PortfolioGrid() {
+  return (
+    <section className="portfolioGrid">
 
-{
-slug:"palm-jumeirah-villa",
-title:"Palm Jumeirah Villa",
-location:"Palm Jumeirah",
-image:"/projects/palm.jpg"
-},
+      {projects.map((project) => (
 
-{
-slug:"emirates-hills",
-title:"Emirates Hills Villa",
-location:"Emirates Hills",
-image:"/projects/hills.jpg"
-},
+        <Link
+          href={`/portfolio/${project.slug}`}
+          className="portfolioItem"
+          key={project.slug}
+        >
 
-{
-slug:"downtown-penthouse",
-title:"Downtown Penthouse",
-location:"Downtown Dubai",
-image:"/projects/penthouse.jpg"
-},
+          <div className="imageWrapper">
 
-{
-slug:"difc-office",
-title:"Luxury Office",
-location:"DIFC",
-image:"/projects/office.jpg"
-},
+            <Image
+              src={project.hero}
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              alt={project.title}
+              className="object-cover"
+            />
 
-{
-slug:"restaurant",
-title:"Fine Dining Restaurant",
-location:"Dubai Marina",
-image:"/projects/restaurant.jpg"
-},
+          </div>
 
-{
-slug:"villa-modern",
-title:"Modern Villa",
-location:"Dubai Hills",
-image:"/projects/villa2.jpg"
-}
+          <div className="portfolioInfo">
 
-]
+            <p>
+              {project.category}, {project.gallery.length} photos
+            </p>
 
-export default function PortfolioGrid(){
+            <h3>{project.title}</h3>
 
-return(
+          </div>
 
-<section className="portfolioGrid">
+        </Link>
 
-{
+      ))}
 
-projects.map(project=>(
-
-<Link
-
-href={`/portfolio/${project.slug}`}
-
-className="portfolioItem"
-
-key={project.slug}
-
->
-
-<div className="imageWrapper">
-
-<Image
-
-src={project.image}
-
-fill
-
-alt={project.title}
-
-className="object-cover"
-
-/>
-
-</div>
-
-<div className="portfolioInfo">
-
-<p>{project.location}</p>
-
-<h3>{project.title}</h3>
-
-</div>
-
-</Link>
-
-))
-
-}
-
-</section>
-
-)
-
+    </section>
+  );
 }

@@ -20,14 +20,16 @@ export default function Navbar() {
 
   return (
     <header className={scrolled ? "navbar scrolled" : "navbar"}>
-      <div className="logo relative w-40 h-12 md:w-48 md:h-16">
-        <Image 
-          src="/logos/giordano.png" 
-          alt="Giordano Building Contracting" 
-          fill
-          className="object-contain"
+      <Link href="/" className="logo" aria-label="Giordano Building Contracting, home">
+        <Image
+          src="/logos/giordano-logo.png"
+          alt="Giordano Building Contracting"
+          width={720}
+          height={556}
+          sizes="120px"
+          priority
         />
-      </div>
+      </Link>
 
       <nav>
         <Link href="/">Home</Link>
@@ -39,11 +41,12 @@ export default function Navbar() {
       </nav>
 
       <a
-        className="button hidden lg:block"
+        className="button navCta"
         href="https://wa.me/971582369969"
         target="_blank"
+        rel="noopener noreferrer"
       >
-        Book Consultation
+        Book a consultation
       </a>
       
       <MobileMenu />

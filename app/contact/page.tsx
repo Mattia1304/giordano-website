@@ -1,6 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact | Giordano Building Contracting",
+  description:
+    "Request a consultation for your luxury renovation project in Dubai. Call +971 58 236 9969 or write to info@giordanobc.it.",
+  alternates: { canonical: "/contact" },
+};
 
 export default function ContactPage() {
   return (
@@ -18,7 +26,7 @@ export default function ContactPage() {
           <h1>Let's Discuss Your Project</h1>
 
           <p>
-            Luxury Renovation • Interior Design • Made in Italy
+            Luxury renovation and interior design, made in Italy.
           </p>
 
         </div>

@@ -1,6 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PortfolioGrid from "@/components/PortfolioGrid";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects | Giordano Building Contracting",
+  description:
+    "Selected residential and commercial luxury renovation projects across Dubai.",
+  alternates: { canonical: "/portfolio" },
+};
 
 export default function PortfolioPage() {
   return (

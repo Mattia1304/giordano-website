@@ -24,12 +24,6 @@ height={1100}
 
 <div>
 
-<span className="section-subtitle">
-
-MADE IN ITALY
-
-</span>
-
 <h2>
 
 Exclusive Italian

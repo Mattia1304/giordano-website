@@ -3,7 +3,10 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Luxury from "@/components/Luxury";
-import Portfolio from "@/components/Portfolio";
+import Marquee from "@/components/Marquee";
+import Manifesto from "@/components/Manifesto";
+import Collage from "@/components/Collage";
+import ProjectIndex from "@/components/ProjectIndex";
 import Process from "@/components/Process";
 import WhyGiordano from "@/components/WhyGiordano";
 import CTA from "@/components/CTA";
@@ -15,11 +18,14 @@ export default function Home() {
 
       <Navbar />
       <Hero />
+      <Marquee />
+      <Manifesto />
       <About />
       <Services />
       <Luxury />
 
-      <Portfolio />
+      <Collage />
+      <ProjectIndex />
       <Process />
       <WhyGiordano />
 

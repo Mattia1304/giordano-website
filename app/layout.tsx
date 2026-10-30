@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import { Montserrat, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
+import "./premium.css";
 import Whatsapp from "@/components/Whatsapp";
+import ScrollEffects from "@/components/ScrollEffects";
+import Cursor from "@/components/Cursor";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -15,9 +18,36 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.giordanobc.it"),
   title: "Giordano Building Contracting | Italian Luxury Renovation Dubai",
   description:
     "Luxury Renovation • Interior Design • Made in Italy • Dubai UAE",
+  openGraph: {
+    type: "website",
+    siteName: "Giordano Building Contracting",
+    title: "Giordano Building Contracting | Italian Luxury Renovation Dubai",
+    description:
+      "Luxury Renovation • Interior Design • Made in Italy • Dubai UAE",
+    images: ["/images/villa.jpg"],
+  },
+  twitter: { card: "summary_large_image" },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "GeneralContractor",
+  name: "Giordano Building Contracting",
+  url: "https://www.giordanobc.it",
+  logo: "https://www.giordanobc.it/logos/giordano-logo.png",
+  image: "https://www.giordanobc.it/images/villa.jpg",
+  telephone: "+971582369969",
+  email: "info@giordanobc.it",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Dubai",
+    addressCountry: "AE",
+  },
+  areaServed: "Dubai, UAE",
 };
 
 export default function RootLayout({
@@ -42,6 +72,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} ${montserrat.className}`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <ScrollEffects />
+        <Cursor />
         {children}
         <Whatsapp />
       </body>

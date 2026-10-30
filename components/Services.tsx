@@ -40,12 +40,6 @@ return(
 
 <section className="services">
 
-<span className="section-subtitle">
-
-OUR EXPERTISE
-
-</span>
-
 <h2>
 
 Luxury Spaces

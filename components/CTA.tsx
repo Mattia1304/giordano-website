@@ -30,7 +30,7 @@ export default function CTA() {
           href="https://wa.me/971582369969"
           className="button"
         >
-          BOOK A CONSULTATION
+          Book a consultation
         </a>
 
       </div>

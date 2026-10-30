@@ -1,6 +1,11 @@
 import { projects } from "@/data/projects";
 import Image from "next/image";
+import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Gallery from "@/components/Gallery";
 
 export function generateStaticParams() {
   return projects.map((p) => ({
@@ -10,6 +15,24 @@ export function generateStaticParams() {
 
 export const dynamicParams = false;
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = projects.find((p) => p.slug === slug);
+
+  if (!project) return {};
+
+  return {
+    title: `${project.title} | Giordano Building Contracting`,
+    description: project.description,
+    alternates: { canonical: `/portfolio/${project.slug}` },
+    openGraph: { images: [project.hero] },
+  };
+}
+
 export default async function ProjectPage({
   params,
 }: {
@@ -17,73 +40,69 @@ export default async function ProjectPage({
 }) {
   const { slug } = await params;
 
-  const project = projects.find((p) => p.slug === slug);
+  const index = projects.findIndex((p) => p.slug === slug);
 
-  if (!project) return notFound();
+  if (index === -1) return notFound();
+
+  const project = projects[index];
+  const next = projects[(index + 1) % projects.length];
 
   return (
-    <main>
+    <>
+      <Navbar />
 
-      <section className="projectHero">
+      <main>
 
-        <Image
-          src={project.hero}
-          alt={project.title}
-          fill
-          priority
-          className="object-cover"
-        />
+        <section className="projectHero">
 
-        <div className="overlay" />
+          <Image
+            src={project.hero}
+            alt={project.title}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+          />
 
-        <div className="heroText">
+          <div className="overlay" />
 
-          <span>{project.category}</span>
+          <div className="heroText">
 
-          <h1>{project.title}</h1>
+            <span>{project.category}</span>
 
-          <p>{project.location}</p>
+            <h1>{project.title}</h1>
 
-        </div>
+          </div>
 
-      </section>
+        </section>
 
-      <section className="projectInfo">
+        <section className="projectDescription">
 
-        <div>
+          <h2>Project Overview</h2>
 
-          <h3>Surface</h3>
+          <p>{project.description}</p>
 
-          <p>{project.surface}</p>
+        </section>
 
-        </div>
+        <section className="projectGallery">
 
-        <div>
+          <Gallery images={project.gallery} title={project.title} />
 
-          <h3>Duration</h3>
+        </section>
 
-          <p>{project.duration}</p>
+        <section className="projectNext">
 
-        </div>
+          <span>NEXT PROJECT</span>
 
-        <div>
+          <Link href={`/portfolio/${next.slug}`}>
+            {next.title}
+          </Link>
 
-          <h3>Completion</h3>
+        </section>
 
-          <p>{project.year}</p>
+      </main>
 
-        </div>
-
-      </section>
-
-      <section className="projectDescription">
-
-        <h2>Project Overview</h2>
-
-        <p>{project.description}</p>
-
-      </section>
-
-    </main>
+      <Footer />
+    </>
   );
 }

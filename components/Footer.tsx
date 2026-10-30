@@ -5,13 +5,14 @@ export default function Footer() {
   return (
     <footer className="footer">
 
-      <div className="footerLogo relative w-40 h-16">
+      <div className="footerLogo">
 
         <Image
-          src="/logos/giordano.png"
-          alt="Giordano"
-          fill
-          className="object-contain object-left"
+          src="/logos/giordano-logo.png"
+          alt="Giordano Building Contracting"
+          width={720}
+          height={556}
+          sizes="200px"
         />
 
       </div>
@@ -24,7 +25,7 @@ export default function Footer() {
 
         <p>info@giordanobc.it</p>
 
-        <p>Dubai · UAE</p>
+        <p>Dubai, UAE</p>
 
       </div>
 

@@ -19,10 +19,6 @@ export default function About() {
 
       <div className="about-content">
 
-        <span className="section-subtitle">
-          ITALIAN CRAFTSMANSHIP
-        </span>
-
         <h2>
           Luxury Renovation
           <br />

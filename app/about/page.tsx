@@ -1,6 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us | Giordano Building Contracting",
+  description:
+    "Italian craftsmanship and premium materials, delivered by Giordano Building Contracting in Dubai.",
+  alternates: { canonical: "/about" },
+};
 
 export default function AboutPage() {
   return (
@@ -32,12 +40,6 @@ export default function AboutPage() {
       <section className="aboutCompany">
 
         <div>
-
-          <span className="section-subtitle">
-
-            WHO WE ARE
-
-          </span>
 
           <h2>
 
@@ -79,12 +81,6 @@ export default function AboutPage() {
       </section>
 
       <section className="values">
-
-        <span className="section-subtitle">
-
-          OUR VALUES
-
-        </span>
 
         <h2>
 
