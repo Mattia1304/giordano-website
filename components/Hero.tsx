@@ -43,7 +43,7 @@ export default function Hero() {
     <section className="hero">
 
       <video
-        src={playVideo ? "/videos/hero.mp4" : undefined}
+        src={playVideo ? "/videos/hero-v2.mp4" : undefined}
         poster="/projects/herringbone-parquet-residence/01.jpg"
         preload="none"
         autoPlay
