@@ -10,8 +10,8 @@ export default function Footer() {
         <Image
           src="/logos/giordano-logo.png"
           alt="Giordano Building Contracting"
-          width={720}
-          height={556}
+          width={360}
+          height={278}
           sizes="200px"
         />
 

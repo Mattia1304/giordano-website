@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1] as const;
@@ -13,14 +14,43 @@ const fade = (delay: number) => ({
 });
 
 export default function Hero() {
+  const [playVideo, setPlayVideo] = useState(false);
+
+  // The 15 MB video competes with the photos for bandwidth: wait for the page
+  // to finish loading and skip it on phones, slow links and data-saver mode.
+  useEffect(() => {
+    const conn = (navigator as Navigator & {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    const slow =
+      conn?.saveData || /^(slow-2g|2g|3g)$/.test(conn?.effectiveType ?? "");
+    if (slow || !window.matchMedia("(min-width: 900px)").matches) return;
+
+    let timer = 0;
+    const start = () => {
+      timer = window.setTimeout(() => setPlayVideo(true), 400);
+    };
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start, { once: true });
+
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("load", start);
+    };
+  }, []);
+
   return (
     <section className="hero">
 
-      <video autoPlay muted loop playsInline>
-
-        <source src="/videos/hero.mp4" type="video/mp4" />
-
-      </video>
+      <video
+        src={playVideo ? "/videos/hero.mp4" : undefined}
+        poster="/projects/herringbone-parquet-residence/01.jpg"
+        preload="none"
+        autoPlay
+        muted
+        loop
+        playsInline
+      />
 
       <div className="overlay" />
 

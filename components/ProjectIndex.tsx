@@ -8,6 +8,8 @@ import { projects } from "@/data/projects";
 export default function ProjectIndex() {
   const [active, setActive] = useState(0);
   const [visible, setVisible] = useState(false);
+  // Previews are only fetched once the pointer reaches the list.
+  const [armed, setArmed] = useState(false);
   const preview = useRef<HTMLDivElement>(null);
   const target = useRef({ x: 0, y: 0 });
   const pos = useRef({ x: 0, y: 0 });
@@ -50,6 +52,7 @@ export default function ProjectIndex() {
           target.current = { x: e.clientX + 30, y: e.clientY - 120 };
           pos.current = { ...target.current };
           setVisible(true);
+          setArmed(true);
         }}
         onMouseLeave={() => setVisible(false)}
       >
@@ -89,7 +92,7 @@ export default function ProjectIndex() {
         aria-hidden="true"
       >
 
-        {projects.map((p, i) => (
+        {armed && projects.map((p, i) => (
 
           <Image
             key={p.slug}
